@@ -2,13 +2,13 @@
 <div class="container-fluid">
     <?= $this->session->flashdata('pesan'); ?>
     <div class="row">
-        <div class="col-lg-5">
+        <div class="col-lg-9">
             <?php if (validation_errors()) { ?>
                 <div class="alert alert-danger" role="alert">
                     <?= validation_errors(); ?>
                 </div> <?php } ?>
             <?= $this->session->flashdata('pesan'); ?>
-            <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#kategoriBaruModal"><i class="fas fa-file-alt"></i> Tambah Mobil</button>
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#kategoriBaruModal"><i class="fas fa-file-alt"></i> Tambah Mobil</button>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -27,8 +27,6 @@
                             <td><?= $dm['hargasewa_mobil']; ?></td>
                             </td>
                             <td>
-                                <button type="button" class="btn btn-primary mb-4" data-toggle="modal" data-target="#ubahMobil"><i class="fas fa-file-alt"></i> Tambah Mobil</button>
-
                                 <a type="button" class="badge badge-info" data-toggle="modal" data-target="#ubahMobil<?= $dm['id_mobil']; ?>">
                                     <i class="fas fa-edit"></i> Ubah
                                 </a>
