@@ -35,10 +35,9 @@ class Auth extends CI_Controller
 	{
 		$email = htmlspecialchars($this->input->post('email', true));
 		$password = md5($this->input->post('password_user', true));
-		$user = $this->db->get_where('user', ['email' => $email])->row_array(); //jika usernya ada 
-		if ($user) { //jika user sudah aktif 
+		$user = $this->db->get_where('user', ['email' => $email])->row_array();
+		if ($user) {
 			if ($user['is_active'] == 1) {
-				//cek password 
 				if ($password == $user['password']) {
 					$data = ['email' => $user['email'], 'role_user' => $user['role_user']];
 					$this->session->set_userdata($data);
@@ -66,7 +65,7 @@ class Auth extends CI_Controller
 	public function logout()
 	{
 		$this->session->unset_userdata('email');
-		$this->session->unset_userdata('role_id');
+		$this->session->unset_userdata('role_user');
 
 		$this->session->set_flashdata('message', '<div class="alert alert-danger alert-message" role="alert"> Kamu telah Logout. Silahkan Login kembali.:)</div>');
 		redirect('Auth');
