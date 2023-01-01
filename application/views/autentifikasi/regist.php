@@ -5,7 +5,7 @@
 
                 <div class="px-5 ms-xl-4">
                     <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #709085;"></i>
-                    <span class="h1 fw-bold mb-0">haiii</span>
+                    <span class="h1 fw-bold mb-0"></span>
                 </div>
 
                 <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
@@ -34,7 +34,6 @@
                             <button class="btn btn-info btn-lg btn-block" type="submit">Daftar</button>
                         </div>
 
-                        <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
                         <a href="<?= base_url('Auth') ?>" class="link-info">Login here</a></p>
 
                     </form>

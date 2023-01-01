@@ -42,15 +42,15 @@ class User extends CI_Controller
         $this->load->view('user/myorder');
         $this->load->view('templates/footer');
     }
-    public function report()
+    public function rating()
     {
-        $data['title'] = 'Report';
+        $data['title'] = 'Rating';
         $data['user'] = $this->db->get_where('user', ['email' =>
         $this->session->userdata('email')])->row_array();
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar', $data);
-        $this->load->view('user/report');
+        $this->load->view('user/ratinguser');
         $this->load->view('templates/footer');
     }
 }

@@ -4,7 +4,7 @@ class Admin extends CI_Controller
 {
     public function index()
     {
-        $data['title'] = 'Joji Car Rent';
+        $data['title'] = 'Joji Rent Car';
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data['date'] = $this->db->get_where('user', ['date_created' => $this->session->userdata('date_created')])->row_array();
 
@@ -61,17 +61,6 @@ class Admin extends CI_Controller
         $this->load->view('templates/sidebar_admin');
         $this->load->view('templates/topbar', $data);
         $this->load->view('admin/transaction', $data);
-        $this->load->view('templates/footer');
-    }
-    public function report()
-    {
-        $data['title'] = 'Report';
-        $data['user'] = $this->db->get_where('user', ['email' =>
-        $this->session->userdata('email')])->row_array();
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar_admin');
-        $this->load->view('templates/topbar', $data);
-        $this->load->view('admin/report', $data);
         $this->load->view('templates/footer');
     }
     public function rating()
